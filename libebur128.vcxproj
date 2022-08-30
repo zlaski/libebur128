@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(SolutionDir)akibld-lib.props" />
+  </ImportGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{596A0272-ABB3-4C11-BEF6-95DC5B7B24BD}</ProjectGuid>
+    <RootNamespace>libebur128</RootNamespace>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <PostBuildEvent>
+      <Command>copy /y $(ProjectDir)ebur128\ebur128.h $(OutDir)..\include\
+attrib +R $(OutDir)..\include\ebur128.h</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="ebur128\ebur128.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ebur128\ebur128.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ebur128\ebur128.h" />
+    <ClInclude Include="ebur128\queue\sys\queue.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>
