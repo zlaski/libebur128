@@ -24,8 +24,11 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="libebur128.bat">
+      <Filter>Build Files</Filter>
+    </None>
     <None Include="ebur128\ebur128.def">
-      <Filter>Resource Files</Filter>
+      <Filter>Build Files</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
