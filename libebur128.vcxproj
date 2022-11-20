@@ -9,10 +9,10 @@
     <ProjectName>libebur128</ProjectName>
   </PropertyGroup>
   <ItemDefinitionGroup>
-    <PostBuildEvent>
+    <PreBuildEvent>
       <Command>libebur128.bat "$(OutDir)"</Command>
-      <Message>Installing headers . . .</Message>
-    </PostBuildEvent>
+      <Message>Installing LIBEBUR128 headers . . .</Message>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ebur128\ebur128.c" />
