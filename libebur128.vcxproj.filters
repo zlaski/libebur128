@@ -1,9 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Build Files">
       <UniqueIdentifier>{4FC347F1-C7A5-4336-A166-2A32D982A2FF}</UniqueIdentifier>
-      <Extensions>bat;cmd;ps1;cmake;am;in;sh;bash</Extensions>
+      <Extensions>bat;cmd;ps1;cmake;am;in;sh;bash;lst</Extensions>
     </Filter>
     <Filter Include="Header Files">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
@@ -11,12 +11,17 @@
     </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mp3;flac;mfcribbon-ms</Extensions>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mp3;mp4;mkv;flac;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="Source Files">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;y;yy;l;asm;asmx;java;cs</Extensions>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;y;yy;l;asm;asmx;jav;java;cs;s;m;mm;pl;py;rb;htm;html;xml</Extensions>
     </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="libebur128.post.bat">
+      <Filter>Build Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ebur128\ebur128.c">
@@ -24,18 +29,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="libebur128.bat">
-      <Filter>Build Files</Filter>
-    </None>
-    <None Include="ebur128\ebur128.def">
-      <Filter>Build Files</Filter>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="ebur128\ebur128.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ebur128\queue\sys\queue.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

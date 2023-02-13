@@ -1,36 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ImportGroup Label="PropertySheets">
-    <Import Project="$(SolutionDir)akibld-lib.props" />
+    <Import Project="$(registry:HKEY_CURRENT_USER\SOFTWARE\Akisystems\akibld@Sources)akibld-lib.props" />
   </ImportGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{596A0272-ABB3-4C11-BEF6-95DC5B7B24BD}</ProjectGuid>
-    <RootNamespace>libebur128</RootNamespace>
-    <ProjectName>libebur128</ProjectName>
+    <ProjectGuid>{BFC9089F-29A2-4BF6-BE56-45398F8A0D2F}</ProjectGuid>
   </PropertyGroup>
-  <ItemDefinitionGroup>
-    <PreBuildEvent>
-      <Command>libebur128.bat "$(OutDir)"</Command>
-      <Message>Installing LIBEBUR128 headers . . .</Message>
-    </PreBuildEvent>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <PostBuildEvent>
+      <Command>$(ProjectName).post.bat "$(SolutionPath)" "$(IntDir)" "$(OutDir)"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <PostBuildEvent>
+      <Message>Running $(ProjectName).post.bat . . .</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <PostBuildEvent>
+      <Command>$(ProjectName).post.bat "$(SolutionPath)" "$(IntDir)" "$(OutDir)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <PostBuildEvent>
+      <Message>Running $(ProjectName).post.bat . . .</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="libebur128.post.bat" />
+  </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ebur128\ebur128.c" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ebur128\ebur128.def" />
-    <None Include="libebur128.bat" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="ebur128\ebur128.h" />
-    <ClInclude Include="ebur128\queue\sys\queue.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\svn\akibld\src\akisystems\akibld\akibld-headers.vcxproj">
-      <Project>{07fa51f2-cd6f-400f-8821-ebfe0040f2d6}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\svn\akibld\src\akisystems\akibld\akibld-lib.vcxproj">
-      <Project>{23650bdb-c46f-43ce-8c77-056924f69b6a}</Project>
-    </ProjectReference>
   </ItemGroup>
 </Project>

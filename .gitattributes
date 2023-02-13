@@ -1,1 +1,5 @@
-d:/svn/akibld/src/akisystems/akibld/templ/akibld.gitattributes
+.build/
+.install/
+.vs/
+**/*.user
+**/*.user
