@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 
 SCRIPT=`basename $0 .sh`
 SCRIPT_DIR=$(realpath $(dirname $0))
