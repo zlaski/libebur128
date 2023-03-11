@@ -6,26 +6,6 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{BFC9089F-29A2-4BF6-BE56-45398F8A0D2F}</ProjectGuid>
   </PropertyGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <PostBuildEvent>
-      <Command>$(ProjectName).post.bat "$(SolutionPath)" "$(IntDir)" "$(OutDir)"</Command>
-    </PostBuildEvent>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <PostBuildEvent>
-      <Message>Running $(ProjectName).post.bat . . .</Message>
-    </PostBuildEvent>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <PostBuildEvent>
-      <Command>$(ProjectName).post.bat "$(SolutionPath)" "$(IntDir)" "$(OutDir)"</Command>
-    </PostBuildEvent>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <PostBuildEvent>
-      <Message>Running $(ProjectName).post.bat . . .</Message>
-    </PostBuildEvent>
-  </ItemDefinitionGroup>
   <ItemGroup>
     <None Include="libebur128.post.bat" />
   </ItemGroup>
